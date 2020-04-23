@@ -9,11 +9,22 @@ import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles({
     box:{
-        border:"2px solid blue",
-        height:"50px"
+        margin:"0 auto",
+        boxShadow: '0px 0px 5px grey',
+        paddingTop: '50px',
+        paddingBottom: '50px',
+        borderRadius: '8px',
+        fontFamily: "'Roboto Mono', monospace"
     },
     center:{
-        justifySelf:"center"
+        margin:"0 auto"
+    },
+    button:{
+        marginTop:"30px"
+    },
+    textfield:{
+        padding:"5px",
+        textAlign:"center"
     }
 })
 
@@ -21,17 +32,17 @@ export default function Box(){
     const classes = useStyles()
     return (
         <Container fluid>
-            <Row className={["justify-content-center"]}>
-                <Col xs={12} >
-                    <TextField id="filled-basic" label="your login ID" variant="filled" required />
-                </Col>
-                <Col xs={12}>
-                    <TextField id="filled-basic" label="your password" variant="filled" required type="password" />
-                </Col>
-                <Col xs={12} >
-                    <Button variant="contained" color="Primary">Sign in</Button>
-                </Col>
-            </Row>
+            <Container className={[classes.box]}>
+                <Row className={["m-1","p-1"]}>
+                    <TextField label="Sudhar Super User-Name" className={[classes.center , classes.textfield]}/>
+                </Row>
+                <Row className={["m-1","p-1"]}>
+                    <TextField label="Password" className={[classes.center, classes.textfield]}/>
+                </Row>
+                <Row className={["m-1","p-1"]}>
+                    <Button variant="contained" color="primary" className={[classes.center , classes.button]}>Sign In</Button>
+                </Row>
+            </Container>
         </Container>
     )
 }
